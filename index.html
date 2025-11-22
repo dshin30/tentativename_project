@@ -8,115 +8,88 @@
 
 <body>
 
-<header>
-    <h1>NYC PM2.5 & Traffic Volume Analysis (2016–2025)</h1>
-    <p class="subtitle">A data-driven story about air quality, traffic behavior, and wildfire impacts.</p>
-</header>
+<h1>NYC PM2.5 & Traffic Volume Analysis (2016–2025)</h1>
+<p class="subtitle">A data-driven story about air quality, traffic behavior, and wildfire impacts.</p>
 
 
-<section id="nyc-intro">
-    <h2>New York City Overview</h2>
-    <p>
-        New York City is one of the most densely populated urban regions in the world.
-        With millions of residents, five major boroughs, and heavy daily traffic, air quality is a critical public health priority.
-    </p>
-
-    <div class="image-center">
-        <img src="static/images/new_york_map.jpeg" alt="NYC borough map" class="img-mid">
-        <p class="caption">Figure 1. The five boroughs of New York City.</p>
-    </div>
-</section>
-
-
-<section id="pm25">
+<!-- ===================== WHAT IS PM2.5 ===================== -->
+<section>
     <h2>What is PM2.5?</h2>
-    <p>
-        PM2.5 refers to particulate matter smaller than 2.5 micrometers—small enough to travel deep into the lungs and enter the bloodstream.
-        These particles come from vehicle emissions, industrial activity, building fuel combustion, and wildfire smoke.
-    </p>
+    <p>PM2.5 refers to particulate matter smaller than 2.5 micrometers. These particles enter deep into the lungs and bloodstream.</p>
 
     <div class="image-row">
         <div>
-            <img src="static/images/pm_lung.jpeg" alt="PM overview lungs">
-            <p class="caption">Figure 2-a. PM2.5 entering respiratory pathways.</p>
+            <img src="pm_lung.jpeg" class="img-mid" alt="PM10 lungs">
+            <p class="caption">PM10</p>
         </div>
-
         <div>
-            <img src="static/images/pm25.jpeg" alt="PM2.5 size comparison">
-            <p class="caption">Figure 2-b. Size comparison between PM10, PM2.5, and PM1.</p>
+            <img src="pm25.jpeg" class="img-mid" alt="PM2.5 lungs">
+            <p class="caption">PM2.5</p>
+        </div>
+        <div>
+            <img src="pm1.jpeg" class="img-mid" alt="PM1 lungs">
+            <p class="caption">PM1</p>
         </div>
     </div>
 </section>
 
 
-<section id="traffic">
-    <h2>Traffic Conditions in NYC</h2>
-    <p>
-        Traffic congestion is one of NYC’s most recognizable features.  
-        Vehicle emissions contribute significantly to PM2.5 levels—especially during peak commuting hours.
-    </p>
 
+<!-- ===================== BOROUGH MAP ===================== -->
+<section>
+    <h2>New York City Borough Map</h2>
     <div class="image-center">
-        <img src="static/images/ny_traffic.jpeg" alt="NYC traffic" class="img-large">
-        <p class="caption">Figure 3. Heavy traffic commonly observed in Manhattan.</p>
+        <img src="new_york_map.jpeg" class="img-mid" alt="NYC borough map">
+        <p class="caption">Figure 1. New York City borough boundaries.</p>
     </div>
 </section>
 
 
-<section id="wildfire">
+
+<!-- ===================== WILDFIRE SMOKE IMPACT ===================== -->
+<section>
     <h2>Wildfire Smoke Impact</h2>
-    <p>
-        In 2023, massive wildfires in Canada pushed smoke across the East Coast.
-        NYC recorded some of the worst PM2.5 levels in modern history.
-    </p>
+    <p>In 2023, massive wildfires in Canada pushed smoke across the East Coast, causing some of the worst PM2.5 readings in NYC history.</p>
 
     <div class="image-row">
         <div>
-            <img src="static/images/canada_wildfrire.webp" alt="Canada wildfire">
-            <p class="caption">Figure 4-a. Canada wildfire event.</p>
+            <img src="canada_wildfire.webp" class="img-mid" alt="Canada wildfire">
+            <p class="caption">Figure 4-a. The 2023 Canada wildfire.</p>
         </div>
-
         <div>
-            <img src="static/images/wildfire_ny.jpeg" alt="NYC orange sky">
+            <img src="wildfire_ny.jpeg" class="img-mid" alt="NYC orange sky">
             <p class="caption">Figure 4-b. NYC sky turning orange due to wildfire smoke.</p>
         </div>
     </div>
 </section>
 
 
-<section id="visualizations">
-    <h2>PM2.5 & Traffic Visualizations</h2>
+
+<!-- ===================== HALF-YEAR PM TREND ===================== -->
+<section>
+    <h2>Half-Year PM2.5 Trend (2016–2025)</h2>
+    <div class="image-center">
+        <img src="HalfyearPM.png" class="img-large" alt="Half-year PM trend">
+        <p class="caption">Figure 5. Half-year average PM2.5 levels showing wildfire spike in 2023.</p>
+    </div>
+</section>
+
+
+
+<!-- ===================== TRAFFIC VS PM SCATTER (FINAL CONCLUSION) ===================== -->
+<section>
+    <h2>Traffic Volume vs PM2.5</h2>
+    <p>To evaluate whether traffic volume influences air quality, we compared NYC traffic counts with PM2.5 levels. The correlation was found to be extremely weak (r ≈ –0.02), indicating traffic is not the primary driver of PM2.5 changes.</p>
 
     <div class="image-center">
-        <img src="static/images/PM_vs_Traffic_line.png" alt="PM vs Traffic line" class="img-large">
-        <p class="caption">Figure 5. PM2.5 vs Traffic Volume.</p>
+        <img src="PM_vs_Traffic_line.png" class="img-large" alt="Traffic vs PM2.5 scatter">
+        <p class="caption">Figure 6. Weak relationship between PM2.5 and traffic volume.</p>
     </div>
-
-    <div class="image-center">
-        <img src="static/images/PM_by_year.png" alt="PM by year" class="img-large">
-        <p class="caption">Figure 6. Annual PM2.5 averages (2016–2025).</p>
-    </div>
-
-    <div class="image-center">
-        <img src="static/images/pm_traffic_distribution.png" alt="PM Traffic Distribution" class="img-large">
-        <p class="caption">Figure 7. PM & Traffic Distribution.</p>
-    </div>
-
-    <div class="image-center">
-        <img src="static/images/pm2.5_traffic_volume_distributionbyyear_line.png" alt="PM & Traffic line" class="img-large">
-        <p class="caption">Figure 8. PM & Traffic by Year (line chart).</p>
-    </div>
-
-    <div class="image-center">
-        <img src="static/images/HalfyearPM.png" alt="Halfyear PM" class="img-large">
-        <p class="caption">Figure 9. Half-year PM2.5 averages.</p>
-    </div>
-
 </section>
 
 
 <footer>
-    <p>© 2025 NYC PM2.5 & Traffic Volume Project</p>
+    <p>© 2025 NYC PM2.5 & Traffic Analysis Project</p>
 </footer>
 
 </body>
