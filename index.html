@@ -1,144 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NYC PM2.5 & Traffic Volume Analysis</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f7f7f7;
-            line-height: 1.6;
-        }
-        header {
-            text-align: center;
-            padding: 60px 20px;
-            background: #000;
-            color: white;
-        }
-        header img {
-            width: 100%;
-            max-height: 500px;
-            object-fit: cover;
-            opacity: 0.85;
-        }
-        .section {
-            max-width: 1000px;
-            margin: 60px auto;
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 0 12px rgba(0,0,0,0.08);
-        }
-        .section img {
-            width: 100%;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-        h2 {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        h3 {
-            margin-top: 40px;
-        }
-        .caption {
-            text-align: center;
-            font-size: 14px;
-            color: gray;
-            margin-top: 8px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <title>NYC PM2.5 & Traffic Volume Analysis (2016–2025)</title>
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 
 <body>
 
-    <!-- HERO -->
-    <header>
-        <h1>NYC PM2.5 & Traffic Volume Analysis (2016–2025)</h1>
-        <p>Understanding air quality trends, wildfire impact, and the real role of traffic.</p>
-        <img src="newyork sky.jpeg" alt="NYC skyline" />
-    </header>
+<!-- HEADER -->
+<header>
+    <h1>NYC PM2.5 & Traffic Volume Analysis (2016–2025)</h1>
+    <p class="subtitle">A data-driven story about air quality, traffic behavior, and wildfire impacts.</p>
+</header>
 
-    <!-- INTRO -->
-    <div class="section">
-        <h2>What is PM2.5 & Why Does It Matter?</h2>
-        <p>
-            PM2.5 is a fine particulate pollutant small enough to penetrate deep into the lungs and bloodstream. 
-            It is strongly linked to asthma, cardiovascular disease, and premature death. 
-            Many people believe that traffic is the main cause of PM2.5—but global studies show traffic contributes only about 27%.
-            This study asks: <b>Does New York City's traffic actually explain changes in PM2.5?</b>
-        </p>
-        <img src="pm lung.jpeg" alt="PM impact on lungs" />
+
+<!-- SECTION 1 - What is PM2.5 -->
+<section id="pm25">
+    <h2>What is PM2.5?</h2>
+    <p>PM2.5 refers to particulate matter smaller than 2.5 micrometers. These particles enter deep into the lungs and bloodstream.</p>
+
+    <div class="image-center">
+        <img src="static/images/pm%20lung.jpeg" alt="PM2.5 lungs diagram" class="img-mid">
+        <p class="caption">Figure 1. PM2.5 enters deep into the lungs and bloodstream.</p>
+    </div>
+</section>
+
+
+
+<!-- SECTION 2 - NYC Map -->
+<section id="nyc-map">
+    <h2>New York City Borough Map</h2>
+
+    <div class="image-center">
+        <img src="static/images/new%20york%20map.jpeg" alt="NYC borough map" class="img-large">
+        <p class="caption">Figure 2. The five boroughs of New York City.</p>
+    </div>
+</section>
+
+
+
+<!-- SECTION 3 - Traffic Example -->
+<section id="traffic">
+    <h2>Traffic Conditions in NYC</h2>
+    <div class="image-center">
+        <img src="static/images/ny%20traffic.jpeg" alt="NYC traffic congestion" class="img-large">
+        <p class="caption">Figure 3. Heavy traffic commonly observed in Manhattan.</p>
+    </div>
+</section>
+
+
+
+<!-- SECTION 4 - Wildfire Impact -->
+<section id="wildfire">
+    <h2>Wildfire Smoke Impact</h2>
+
+    <div class="image-center">
+        <img src="static/images/canada%20wildfire.webp" alt="Canada wildfire" class="img-large">
+        <p class="caption">Figure 4. The 2023 Canada wildfire that sent smoke into NYC.</p>
     </div>
 
-    <!-- NYC MAP -->
-    <div class="section">
-        <h2>NYC Boroughs Analyzed</h2>
-        <p>
-            We analyze Manhattan, Brooklyn, Queens, and the Bronx using traffic and PM2.5 data from 2016–2025. 
-            Staten Island was excluded due to incomplete traffic coverage.
-        </p>
-        <img src="new york map.jpeg" alt="NYC borough map" />
+    <div class="image-center">
+        <img src="static/images/wildfire%20ny.jpeg" alt="NYC sky orange wildfire" class="img-large">
+        <p class="caption">Figure 5. NYC sky turning orange due to heavy smoke (2023).</p>
+    </div>
+</section>
+
+
+
+<!-- SECTION 5 - Data Visualizations -->
+<section id="visualizations">
+    <h2>PM2.5 & Traffic Visualizations</h2>
+
+    <div class="image-center">
+        <img src="static/images/PM%20vs%20Traffic%20line.png" alt="PM2.5 vs Traffic line graph" class="img-large">
+        <p class="caption">Figure 6. PM2.5 vs Traffic Volume (line plot).</p>
     </div>
 
-    <!-- Wildfire Impact -->
-    <div class="section">
-        <h2>The 2023 Wildfire Event</h2>
-        <p>
-            In June 2023, smoke from Canadian wildfires reached NYC, driving PM2.5 levels above 117 µg/m³ — 
-            the worst in recorded city history. This extreme spike dominates the air-quality timeline 
-            and is unrelated to local traffic emissions.
-        </p>
-        <img src="wildfire ny.jpeg" alt="NYC under wildfire smoke" />
-        <img src="canada wildfire.webp" alt="Canadian wildfire" />
+    <div class="image-center">
+        <img src="static/images/PM%20by%20year.png" alt="PM by year plot" class="img-large">
+        <p class="caption">Figure 7. Annual PM2.5 averages (2016–2025).</p>
     </div>
 
-    <!-- Heatmap -->
-    <div class="section">
-        <h2>Yearly PM2.5 by Borough</h2>
-        <img src="PM by year.png" />
-        <p class="caption">Figure 1. Yearly PM2.5 levels by borough (2016–2025)</p>
+    <div class="image-center">
+        <img src="static/images/pm2.5_traffic_volume_distributionbyyear_bar.png" alt="PM & Traffic distribution bar chart" class="img-large">
+        <p class="caption">Figure 8. Traffic and PM2.5 distribution by year (bar).</p>
     </div>
 
-    <!-- Scatter / Correlation -->
-    <div class="section">
-        <h2>PM2.5 vs Traffic Volume (Correlation)</h2>
-        <img src="PM vs Traffic line.png" />
-        <p class="caption">Correlation is approximately r = –0.02 (no meaningful relationship)</p>
+    <div class="image-center">
+        <img src="static/images/pm2.5_traffic_volume_distributionbyyear_line.png" alt="PM & Traffic distribution line chart" class="img-large">
+        <p class="caption">Figure 9. Traffic and PM2.5 distribution by year (line).</p>
     </div>
 
-    <!-- Bar charts -->
-    <div class="section">
-        <h2>PM2.5 & Traffic by Era</h2>
-        <img src="pm2.5_traffic_volume_distributionbyyear_bar.png" />
+    <div class="image-center">
+        <img src="static/images/HalfyearPM.png" alt="Half-year PM trend" class="img-large">
+        <p class="caption">Figure 10. Half-year PM2.5 averages.</p>
     </div>
+</section>
 
-    <!-- Time-series -->
-    <div class="section">
-        <h2>PM2.5 & Traffic Trends Over Time</h2>
-        <img src="pm2.5_traffic_volume_distributionbyyear_line.png" />
-    </div>
 
-    <!-- Half-year -->
-    <div class="section">
-        <h2>Half-Year PM2.5 Trend (2016–2025)</h2>
-        <img src="HalfyearPM.png" />
-    </div>
-
-    <!-- Conclusion -->
-    <div class="section">
-        <h2>Key Findings</h2>
-        <ul>
-            <li>Traffic volume shows almost no correlation with PM2.5.</li>
-            <li>Wildfire smoke and regional pollution transport dominate PM spikes.</li>
-            <li>COVID traffic reduction did not reduce PM2.5 levels.</li>
-            <li>Air-quality policy must address cross-border and wildfire-driven pollution.</li>
-        </ul>
-    </div>
+<!-- FOOTER -->
+<footer>
+    <p>© 2025 NYC PM2.5 & Traffic Volume Project</p>
+</footer>
 
 </body>
 </html>
-
