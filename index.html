@@ -8,49 +8,75 @@
 
 <body>
 
-<h1>NYC PM2.5 & Traffic Volume Analysis (2016–2025)</h1>
-<p class="subtitle">A data-driven story about air quality, traffic behavior, and wildfire impacts.</p>
+<header>
+    <h1>NYC PM2.5 & Traffic Volume Analysis (2016–2025)</h1>
+    <p class="subtitle">A data-driven story about air quality, traffic behavior, and wildfire impacts.</p>
+</header>
 
 
-<!-- ================= SECTION 2 - PM EXPLANATION ================ -->
+<!-- ================= NYC INTRO ================= -->
+<section id="nyc-intro">
+    <h2>New York City Overview</h2>
+    <p>
+        New York City is one of the most densely populated regions in the world.  
+        With millions of residents and heavy daily traffic, air quality plays a major role in public health.
+    </p>
+
+    <div class="image-center">
+        <img src="static/images/new_york_map.jpeg" class="img-mid" alt="NYC borough map">
+        <p class="caption">Figure 1. The five boroughs of New York City.</p>
+    </div>
+</section>
+
+
+
+<!-- ================= PM EXPLANATION ================= -->
 <section id="pm25">
     <h2>What is PM2.5?</h2>
     <p>
         PM2.5 refers to particulate matter smaller than 2.5 micrometers.  
-        These particles enter deep into the lungs and bloodstream.
+        These particles can travel deep into the lungs and bloodstream, posing major health risks.
     </p>
 
     <div class="image-center">
-        <img src="static/images/pm_lung.jpeg" alt="PM size comparison" class="img-mid">
-        <p class="caption">Figure 2. PM10, PM2.5, PM1 size comparison.</p>
+        <img src="static/images/pm_lung.jpeg" class="img-mid" alt="PM pathways">
+        <p class="caption">Figure 2. PM10, PM2.5, and PM1 entering respiratory pathways.</p>
     </div>
 </section>
 
 
 
-<!-- ===================== BOROUGH MAP ===================== -->
-<section>
-    <h2>New York City Borough Map</h2>
+<!-- ================= TRAFFIC ================= -->
+<section id="traffic">
+    <h2>Traffic Conditions in NYC</h2>
+    <p>
+        NYC traffic congestion contributes significantly to daily PM2.5 levels—especially during rush hours.
+    </p>
+
     <div class="image-center">
-        <img src="new_york_map.jpeg" class="img-mid" alt="NYC borough map">
-        <p class="caption">Figure 1. New York City borough boundaries.</p>
+        <img src="static/images/ny_traffic.jpeg" class="img-large" alt="NYC traffic">
+        <p class="caption">Figure 3. Heavy traffic commonly seen in Manhattan.</p>
     </div>
 </section>
 
 
 
-<!-- ===================== WILDFIRE SMOKE IMPACT ===================== -->
-<section>
+<!-- ================= WILDFIRE ================= -->
+<section id="wildfire">
     <h2>Wildfire Smoke Impact</h2>
-    <p>In 2023, massive wildfires in Canada pushed smoke across the East Coast, causing some of the worst PM2.5 readings in NYC history.</p>
+    <p>
+        In 2023, large-scale wildfires in Canada sent smoke drifting across the East Coast,  
+        causing some of the worst PM2.5 readings in NYC history.
+    </p>
 
     <div class="image-row">
         <div>
-            <img src="canada_wildfire.webp" class="img-mid" alt="Canada wildfire">
+            <img src="static/images/canada_wildfrire.webp" class="img-mid" alt="Canada wildfire">
             <p class="caption">Figure 4-a. The 2023 Canada wildfire.</p>
         </div>
+
         <div>
-            <img src="wildfire_ny.jpeg" class="img-mid" alt="NYC orange sky">
+            <img src="static/images/wildfire_ny.jpeg" class="img-mid" alt="NYC orange sky">
             <p class="caption">Figure 4-b. NYC sky turning orange due to wildfire smoke.</p>
         </div>
     </div>
@@ -58,33 +84,42 @@
 
 
 
-<!-- ===================== HALF-YEAR PM TREND ===================== -->
-<section>
-    <h2>Half-Year PM2.5 Trend (2016–2025)</h2>
-    <div class="image-center">
-        <img src="HalfyearPM.png" class="img-large" alt="Half-year PM trend">
-        <p class="caption">Figure 5. Half-year average PM2.5 levels showing wildfire spike in 2023.</p>
-    </div>
-</section>
-
-
-
-<!-- ===================== TRAFFIC VS PM SCATTER (FINAL CONCLUSION) ===================== -->
-<section>
-    <h2>Traffic Volume vs PM2.5</h2>
-    <p>To evaluate whether traffic volume influences air quality, we compared NYC traffic counts with PM2.5 levels. The correlation was found to be extremely weak (r ≈ –0.02), indicating traffic is not the primary driver of PM2.5 changes.</p>
+<!-- ================= VISUALIZATIONS ================= -->
+<section id="visualizations">
+    <h2>PM2.5 & Traffic Visualizations</h2>
 
     <div class="image-center">
-        <img src="PM_vs_Traffic_line.png" class="img-large" alt="Traffic vs PM2.5 scatter">
-        <p class="caption">Figure 6. Weak relationship between PM2.5 and traffic volume.</p>
+        <img src="static/images/PM_by_year.png" class="img-large" alt="PM by year heatmap">
+        <p class="caption">Figure 5. Annual PM2.5 averages (2016–2025).</p>
     </div>
+
+    <div class="image-center">
+        <img src="static/images/pm2.5_traffic_volume_distributionbyyear_bar.png" class="img-large" alt="PM & Traffic distribution bar">
+        <p class="caption">Figure 6. Traffic and PM2.5 distribution by year (bar).</p>
+    </div>
+
+    <div class="image-center">
+        <img src="static/images/pm2.5_traffic_volume_distributionbyyear_line.png" class="img-large" alt="PM & Traffic distribution line">
+        <p class="caption">Figure 7. Traffic and PM2.5 distribution by year (line).</p>
+    </div>
+
+    <div class="image-center">
+        <img src="static/images/HalfyearPM.png" class="img-large" alt="Half-year PM trend">
+        <p class="caption">Figure 8. Half-year PM2.5 trends (2016–2025).</p>
+    </div>
+
+    <div class="image-center">
+        <img src="static/images/PM_vs_Traffic_line.png" class="img-large" alt="PM vs Traffic regression">
+        <p class="caption">Figure 9. Scatter plot + regression line showing weak/no correlation.</p>
+    </div>
+
 </section>
+
 
 
 <footer>
-    <p>© 2025 NYC PM2.5 & Traffic Analysis Project</p>
+    <p>© 2025 NYC PM2.5 & Traffic Volume Project</p>
 </footer>
 
 </body>
 </html>
-
