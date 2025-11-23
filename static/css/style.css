@@ -1,7 +1,7 @@
 /* ========== GLOBAL LAYOUT & TYPOGRAPHY ========== */
 
 :root {
-    --accent-green: #2e7d32;      /* GMU 느낌 나는 그린 */
+    --accent-green: #2e7d32;
     --accent-light: #e0f2f1;
     --text-main: #222222;
     --text-muted: #666666;
@@ -9,23 +9,27 @@
     --page-bg: #f5f5f7;
 }
 
-/* ===== HERO SECTION ===== */
+/* ========== HERO SECTION ========== */
+
 .hero {
     text-align: center;
     padding: 60px 20px 50px;
-    background: linear-gradient(to bottom, #f5f7fa, #ffffff);
+    background: linear-gradient(to bottom, #f7f9fc, #ffffff);
     border-bottom: 1px solid #ddd;
     margin-bottom: 40px;
+
+    /* subtle premium look */
+    backdrop-filter: blur(3px);
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-/* HERO 제목 */
 .hero-title {
     font-size: 48px;
     font-weight: 800;
     margin-bottom: 10px;
 }
 
-/* 저자 섹션 */
 .hero-authors {
     font-size: 20px;
     font-weight: 500;
@@ -38,7 +42,6 @@
     margin-bottom: 25px;
 }
 
-/* 문제의 핵심 — project title */
 .hero-project-title {
     font-size: 26px;
     font-weight: 700;
@@ -49,7 +52,6 @@
     margin-right: auto;
 }
 
-/* 부제 */
 .hero-subtitle {
     font-size: 18px;
     font-style: italic;
@@ -58,7 +60,8 @@
     margin: 10px auto 0;
 }
 
-/* ===== RESET & BODY ===== */
+/* ========== RESET & BODY ========== */
+
 *,
 *::before,
 *::after {
@@ -68,24 +71,24 @@
 body {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 30px 20px 60px;
+    padding: 30px clamp(10px, 4vw, 40px) 60px;
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-    line-height: 1.7;
+    line-height: 1.75;
     background: var(--page-bg);
     color: var(--text-main);
 }
 
-/* 문단 기본 스타일 */
+/* 문단 */
 p {
     text-align: left;
     font-size: 16px;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
     max-width: 780px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* 제목 공통 스타일 */
+/* 제목 */
 h1, h2, h3 {
     font-weight: 700;
     text-align: center;
@@ -96,8 +99,15 @@ h1, h2, h3 {
 h2 {
     margin-bottom: 26px;
     position: relative;
+    opacity: 0;
+    animation: fadeUp 0.4s ease-out forwards;
 }
 
+@keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 제목 밑줄 */
 h2::after {
     content: "";
     display: block;
@@ -106,38 +116,28 @@ h2::after {
     background: var(--accent-green);
     margin: 10px auto 0;
     border-radius: 999px;
+    opacity: 0;
+    transform: scaleX(0.5);
+    animation: underlineFade 0.4s ease-out forwards;
+    animation-delay: 0.2s;
 }
 
-/* ========== SECONDARY HEADER ========== */
-
-header h1 {
-    font-size: 26px;
-    margin-bottom: 6px;
-}
-
-.subtitle {
-    text-align: center;
-    color: #444444;
-    margin-top: 0;
-    font-size: 16px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+@keyframes underlineFade {
+    to {
+        opacity: 1;
+        transform: scaleX(1);
+    }
 }
 
 /* ========== SECTION CARD STYLE ========== */
-/* 핵심 수정!!! hero는 카드 스타일 적용 제외 */
-section:not(.hero) {
-    background: var(--card-bg);
+
+.card-section {
+    background: #ffffff;
     padding: 32px 40px 36px;
     border-radius: 16px;
     margin: 40px 0;
+    border: 1px solid #ececec;
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
-}
-
-/* abstract는 조금 위로 */
-#abstract {
-    margin-top: 24px;
 }
 
 /* ========== IMAGES & FIGURES ========== */
@@ -152,22 +152,13 @@ img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
 }
 
-.img-large {
-    width: 80%;
-}
+.img-large { width: 80%; }
+.img-mid { width: 60%; }
+.img-small { width: 40%; }
 
-.img-mid {
-    width: 60%;
-}
-
-.img-small {
-    width: 40%;
-}
-
-/* 캡션(연한 회색) */
 .caption {
     text-align: center;
     font-size: 14px;
@@ -175,7 +166,6 @@ img {
     color: #7a7a7a;
 }
 
-/* 캡션 아래 설명 박스 */
 .figure-description {
     margin-top: 12px;
     padding: 12px 18px;
@@ -208,15 +198,12 @@ img {
 /* ========== REFERENCES ========== */
 
 #references {
-    margin-top: 50px;
-    background: #fbfbfb;
-    border-radius: 14px;
+    background: #fafafa;
+    border-left: 4px solid var(--accent-green);
+    border-radius: 8px;
     padding: 26px 32px 30px;
+    margin-top: 50px;
     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.05);
-}
-
-#references h2 {
-    margin-top: 0;
 }
 
 .reference-item {
@@ -247,16 +234,12 @@ a:hover {
     text-decoration: underline;
 }
 
-/* ========== RESPONSIVE DESIGN (모바일) ========== */
+/* ========== RESPONSIVE DESIGN ========== */
 
 @media (max-width: 900px) {
-    body {
-        padding: 20px 14px 40px;
-    }
 
-    section:not(.hero) {
+    .card-section {
         padding: 24px 18px 28px;
-        border-radius: 12px;
     }
 
     .img-large,
@@ -264,25 +247,13 @@ a:hover {
     .img-small {
         width: 100%;
     }
+
+    body {
+        padding: 20px 10px 40px;
+    }
 }
 
 @media (max-width: 720px) {
-
-    .poster-header h1 {
-        font-size: 34px;
-    }
-
-    .poster-header .authors {
-        font-size: 18px;
-    }
-
-    .poster-header .affiliation {
-        font-size: 16px;
-    }
-
-    header h1 {
-        font-size: 22px;
-    }
 
     .image-row {
         flex-direction: column;
@@ -292,4 +263,3 @@ a:hover {
         width: 100%;
     }
 }
-
