@@ -90,6 +90,18 @@ img {
     font-size: 13px;
 }
 
+#references {
+    margin-top: 60px;
+}
+
+.reference-item {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+
 /* ----------- FOOTER ----------- */
 footer p {
     text-align: center;
