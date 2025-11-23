@@ -1,72 +1,137 @@
-/* ----------- GLOBAL PAGE LAYOUT ----------- */
-body {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px 40px;
-    font-family: "Helvetica", sans-serif;
-    line-height: 1.7;
-    text-align: center;  /* 전체 기본 중앙 정렬 */
+/* ========== GLOBAL LAYOUT & TYPOGRAPHY ========== */
+
+:root {
+    --accent-green: #2e7d32;      /* GMU 느낌 나는 그린 */
+    --accent-light: #e0f2f1;
+    --text-main: #222222;
+    --text-muted: #666666;
+    --card-bg: #ffffff;
+    --page-bg: #f5f5f7;
 }
-.poster-header h1 {
-    text-align: center;
-    font-size: 60px;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 20px 60px;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    line-height: 1.7;
+    background: var(--page-bg);
+    color: var(--text-main);
+}
+
+/* 기본 문단은 좌측 정렬 + 적당한 폭만 사용 */
+p {
+    text-align: left;
+    font-size: 16px;
+    margin-bottom: 18px;
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 제목들: 가운데 정렬, 카드 안에서 시각적 구분선 추가 */
+h1, h2, h3 {
     font-weight: 700;
-    margin-bottom: 30px;
+    text-align: center;
+    color: #111111;
+    margin-top: 0;
+}
+
+h2 {
+    margin-bottom: 26px;
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 3px;
+    background: var(--accent-green);
+    margin: 10px auto 0;
+    border-radius: 999px;
+}
+
+/* ========== POSTER HEADER (제일 상단 큰 제목) ========== */
+
+.poster-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.poster-header h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.15;
 }
 
 .poster-header .authors {
-    text-align: center;
-    font-size: 26px;
-    margin-top: -10px;
-    color: #555;
+    font-size: 22px;
+    color: #444444;
+    margin-top: -2px;
+    margin-bottom: 4px;
 }
 
 .poster-header .affiliation {
-    text-align: center;
-    font-size: 22px;
-    margin-top: -5px;
-    color: #777;
+    font-size: 18px;
+    color: #777777;
+    margin-top: 0;
 }
 
-/* 본문 문단 기본 정렬 */
-p {
-    text-align: center;
-    font-size: 17px;
-    margin-bottom: 20px;
-}
+/* ========== SECONDARY HEADER (부제 / 설명) ========== */
 
-h1, h2, h3 {
-    text-align: center;
-    font-weight: 700;
+header h1 {
+    font-size: 26px;
+    margin-bottom: 6px;
 }
 
 .subtitle {
     text-align: center;
-    color: #444;
-    margin-top: -10px;
+    color: #444444;
+    margin-top: 0;
+    font-size: 16px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* ----------- SECTION SPACING ----------- */
+/* ========== SECTION CARD STYLE ========== */
+
 section {
-    margin-top: 70px;
-    margin-bottom: 70px;
+    background: var(--card-bg);
+    padding: 32px 40px 36px;
+    border-radius: 16px;
+    margin: 40px 0;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
 }
 
+/* 첫 섹션은 헤더 바로 밑에 조금 더 붙도록 */
+#abstract {
+    margin-top: 24px;
+}
 
-/* ----------- IMAGE CENTERING ----------- */
+/* ========== IMAGES & FIGURES ========== */
+
 .image-center {
     text-align: center;
-    margin-top: 25px;
-    margin-bottom: 40px;
+    margin-top: 24px;
+    margin-bottom: 30px;
 }
 
 img {
     max-width: 100%;
     height: auto;
-    border-radius: 6px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
 }
 
-/* ----------- FIX IMAGE SIZE PRESETS ----------- */
 .img-large {
     width: 80%;
 }
@@ -79,21 +144,33 @@ img {
     width: 40%;
 }
 
-/* ----------- FIGURE CAPTION ----------- */
+/* 캡션 (연한 회색, 교수님 스타일) */
 .caption {
     text-align: center;
     font-size: 14px;
-    margin-top: 8px;
-    color: #666;
+    margin-top: 10px;
+    color: #7a7a7a;
 }
 
-/* ----------- TWO IMAGES SIDE BY SIDE ----------- */
+/* 캡션 아래 설명 박스 */
+.figure-description {
+    margin-top: 12px;
+    padding: 12px 18px;
+    background: #f2f2f2;
+    border-radius: 10px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444444;
+}
+
+/* ========== TWO IMAGES SIDE BY SIDE ========== */
+
 .image-row {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin: 25px 0;
+    align-items: flex-start;
+    gap: 24px;
+    margin: 26px 0 10px;
 }
 
 .image-row div {
@@ -103,29 +180,92 @@ img {
 
 .image-row img {
     width: 100%;
-    border-radius: 6px;
 }
 
-.image-row .caption {
-    font-size: 13px;
-}
+/* ========== REFERENCES ========== */
 
 #references {
-    margin-top: 60px;
+    margin-top: 50px;
+    background: #fbfbfb;
+    border-radius: 14px;
+    padding: 26px 32px 30px;
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.05);
+}
+
+#references h2 {
+    margin-top: 0;
 }
 
 .reference-item {
     font-size: 14px;
-    color: #555;
+    color: #555555;
     margin-bottom: 10px;
     line-height: 1.5;
 }
 
+/* ========== FOOTER ========== */
 
-/* ----------- FOOTER ----------- */
 footer p {
     text-align: center;
-    font-size: 14px;
-    color: #666;
-    margin-top: 40px;
+    font-size: 13px;
+    color: #777777;
+    margin-top: 32px;
+}
+
+/* ========== LINKS (혹시 참고 링크 추가할 때 대비) ========== */
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ========== RESPONSIVE DESIGN (모바일) ========== */
+
+@media (max-width: 900px) {
+    body {
+        padding: 20px 14px 40px;
+    }
+
+    section {
+        padding: 24px 18px 28px;
+        border-radius: 12px;
+    }
+
+    .img-large,
+    .img-mid,
+    .img-small {
+        width: 100%;
+    }
+}
+
+@media (max-width: 720px) {
+
+    .poster-header h1 {
+        font-size: 34px;
+    }
+
+    .poster-header .authors {
+        font-size: 18px;
+    }
+
+    .poster-header .affiliation {
+        font-size: 16px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    .image-row {
+        flex-direction: column;
+    }
+
+    .image-row div {
+        width: 100%;
+    }
 }
