@@ -181,6 +181,9 @@ img {
 
 .image-row img {
     width: 100%;
+    aspect-ratio: 16 / 9;  
+    object-fit: cover;   
+    height: auto;
 }
 
 /* ========== REFERENCES ========== */
