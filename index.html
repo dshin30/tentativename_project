@@ -1,10 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NYC PM2.5 & Traffic Volume Analysis</title>
     <link rel="stylesheet" href="static/css/style.css">
+
+    <style>
+        /* Let zoomed images overflow instead of being cut */
+        .image-center,
+        .image-row > div {
+            overflow: visible;
+            position: relative;
+        }
+
+        /* Base image behavior: smooth animation + zoom cursor */
+        .image-center img,
+        .image-row img {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: zoom-in;
+            position: relative;
+            z-index: 2;              /* make image sit on top of nearby content */
+            transform-origin: center top;  /* zoom mostly downward */
+        }
+
+        /* Hover (mouse) + Active (finger tap) zoom */
+        .image-center img:hover,
+        .image-row img:hover,
+        .image-center img:active,
+        .image-row img:active {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+    </style>
 </head>
 
 <body>
@@ -109,7 +138,7 @@
         <img src="static/images/covid.jpeg" class="img-large">
         <p class="caption">Figure 6. COVID-19 pandemic representation.</p>
         <p class="figure-description">
-            Lockdowns drastically changed how people moeved through the city: subway rider decreased, remote work became widespread, and street activity declined sharply. 
+            Lockdowns drastically changed how people moved through the city: subway rider decreased, remote work became widespread, and street activity declined sharply. 
             At the same time, car usage and delivery traffic increased, creating mobility patterns unlike any other period in recent history.
         </p>
     </div>
@@ -164,7 +193,7 @@
 </div>
 
 <!-- ================= RELATIONSHIP VISUALS ================= -->
-<section id="visualizations" class="card-section">
+<section id="visualizations" class="card-section" style="box-shadow: none;">
     <h2>Relationship Between PM2.5 & Traffic</h2>
 
     <div class="image-center">
@@ -213,6 +242,12 @@
         The 2023 Canadian wildfires produced the clearest and strongest PM2.5 spike in the entire dataset,
         overwhelming the influence of local traffic. This suggests that improving NYC air quality requires strategies addressing
         regional pollution transport, climate-driven wildfire risk, and building-related emissions.
+    </p>
+
+    <p>
+        After seeing that traffic and PM2.5 had almost no clear relationship, we also considered that this pattern may be partly due
+        to the gradual increase in electric and other environment-friendly vehicles over the years. Cleaner engines and stronger
+        emission controls can allow traffic volumes to grow without causing a matching rise in PM2.5.
     </p>
 
     <p>
