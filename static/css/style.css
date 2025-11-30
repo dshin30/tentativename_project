@@ -260,4 +260,32 @@ a:hover {
     .image-row div {
         width: 100%;
     }
+
+}
+
+/* ========= Image hover / tap zoom effect ========= */
+
+/* Make the image containers hide overflow so zoom doesn't spill out */
+.image-center,
+.image-row > div {
+    overflow: hidden;
+}
+
+/* Base state: enable smooth animation + zoom cursor */
+.img-large,
+.img-mid,
+.wildfire-img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: zoom-in;
+}
+
+/* Hover (desktop) + Active (mobile tap) */
+.img-large:hover,
+.img-mid:hover,
+.wildfire-img:hover,
+.img-large:active,
+.img-mid:active,
+.wildfire-img:active {
+    transform: scale(1.08);  /* how much it zooms in */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
